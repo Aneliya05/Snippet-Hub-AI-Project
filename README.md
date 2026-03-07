@@ -1,5 +1,5 @@
 # Snippet-Hub-AI-Project
-** AnL AI Code Snippet Hub** is a platform helping in storing and analyzing code snippets solving problems from Competitive Informatics. Users can add their own algorithms, categorize them and use LLM for code analysis and documentation.
+**AnL AI Code Snippet Hub** is a platform helping in storing and analyzing code snippets solving problems from Competitive Informatics. Users can add their own algorithms, categorize them and use LLM for code analysis and documentation.
 
 # AI Code Snippet Hub
 
