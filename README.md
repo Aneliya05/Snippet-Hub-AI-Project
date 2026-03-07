@@ -1,5 +1,5 @@
 # Snippet-Hub-AI-Project
-AnL Snippet Hub is a powerful project based on MVC layer architecture. The aim of the project is to help people in storing their code snippets solving a great variety of algorithmic tasks. The integrated LLM will help in analyzing and allocating the snippets in different categories.
+AnL Snippet Hub is a powerful project based on MVC layer architecture. The aim of the project is to help people in storing their code snippets which solve a great variety of algorithmic tasks. The integrated LLM will help with code analysis and allocation of snippets in different categories.
 
 # AI Code Snippet Hub
 
