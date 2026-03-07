@@ -50,6 +50,3 @@ OpenAI API
 Database (SQL Server)
 ---
 ```
-
-## ✅ Done
-- [ ] (completed tasks)
