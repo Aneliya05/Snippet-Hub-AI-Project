@@ -5,7 +5,10 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options
+        .UseLazyLoadingProxies()
+        .UseSqlite("Data Source=app.db"));
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Data_Layer.Entities
 {
-    public class Snippet : BaseEntity
+    public class Snippet : BaseItemEntity
     {  
-       
+       public virtual List<Tag> Tags { get; set; } = new List<Tag>();
     }
 }

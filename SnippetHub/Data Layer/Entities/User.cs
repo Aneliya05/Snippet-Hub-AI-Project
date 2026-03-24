@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace Data_Layer.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
-        public int Id { get; set; }
         public string Email { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public virtual List<Snippet> Snippets { get; set; } = new List<Snippet>();
+        public virtual List<Article> Articles { get; set; } = new List<Article>();
+        public virtual List<SavedItem> SavedItems { get; set; } = new List<SavedItem>();
     }
 }

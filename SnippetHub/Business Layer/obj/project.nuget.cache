@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uYWJBMUQi7DHny/ZR+mRYaBpq1veZm0Y/OD3wwXnJL0R4xBP2yGc6yuBU2XfMmwdmcdQzDcEJnWII5pDFnr4fA==",
+  "dgSpecHash": "iwYpbdob6v2/yGqi9/vRsAUx5+997F0CkjsLU7Hat86/S89j8AfoKaKzgPL/DSkB099JzC5Y+KGgggf4UATAWA==",
   "success": true,
   "projectFilePath": "D:\\Aneliya\\Uni\\AI Integrations\\Snippet-Hub-AI-Project\\SnippetHub\\Business Layer\\Business Layer.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\aneli\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.25\\microsoft.entityframeworkcore.relational.8.0.25.nupkg.sha512",
     "C:\\Users\\aneli\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\8.0.25\\microsoft.entityframeworkcore.sqlite.8.0.25.nupkg.sha512",
     "C:\\Users\\aneli\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\8.0.25\\microsoft.entityframeworkcore.sqlite.core.8.0.25.nupkg.sha512",
+    "C:\\Users\\aneli\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.25\\microsoft.entityframeworkcore.tools.8.0.25.nupkg.sha512",
     "C:\\Users\\aneli\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\aneli\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.1\\microsoft.extensions.caching.memory.8.0.1.nupkg.sha512",
     "C:\\Users\\aneli\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
