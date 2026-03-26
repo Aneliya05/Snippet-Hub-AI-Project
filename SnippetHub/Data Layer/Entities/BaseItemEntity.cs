@@ -8,19 +8,12 @@ using System.Threading.Tasks;
 
 namespace Data_Layer.Entities
 {
-    [NotMapped]
     public class BaseItemEntity : BaseEntity
     {
         public string Title { get; set; }
         public string Description { get; set; }
         public string Content { get; set; }
         public DateOnly DatePublished { get; set; }
-        public int AuthorId { get; set; }
-
-        public int CategoryId { get; set; }
-        public int LanguageId { get; set; }
-        public virtual User Author { get; set; }
-        public virtual Category Category { get; set; }
-        public virtual Language Language { get; set; }
+       
     }
 }
