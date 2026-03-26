@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data_Layer.Entities
 {
+    [NotMapped]
     public class BaseItemEntity : BaseEntity
     {
         public string Title { get; set; }

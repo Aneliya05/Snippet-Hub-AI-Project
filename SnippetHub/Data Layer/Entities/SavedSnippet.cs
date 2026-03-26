@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Data_Layer.Entities
 {
-    public class SavedItem : BaseEntity
+    public class SavedSnippet : BaseEntity
     {
-        public string Type { get; set; }
         public int UserId { get; set; } 
         public virtual User User { get; set; }
-        public int ItemId { get; set; }
-        public virtual BaseItemEntity Item { get; set; }
+        public int SnippetId { get; set; }
+        public virtual Snippet Snippet { get; set; }
     }
 }

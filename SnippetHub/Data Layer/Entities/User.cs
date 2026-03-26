@@ -16,6 +16,7 @@ namespace Data_Layer.Entities
 
         public virtual List<Snippet> Snippets { get; set; } = new List<Snippet>();
         public virtual List<Article> Articles { get; set; } = new List<Article>();
-        public virtual List<SavedItem> SavedItems { get; set; } = new List<SavedItem>();
+        public virtual List<SavedSnippet> SavedSnippets { get; set; } = new List<SavedSnippet>();
+        public virtual List<SavedArticle> SavedArticles { get; set; }
     }
 }

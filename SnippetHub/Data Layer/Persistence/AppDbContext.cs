@@ -19,7 +19,8 @@ namespace Data_Layer.Persistence
         public DbSet<Language> Languages { get; set; }  
         public DbSet<Tag> Tags { get; set; }
 
-        public DbSet<SavedItem> SavedItems { get; set; }
+        public DbSet<SavedSnippet> SavedSnippets { get; set; }
+        public DbSet<SavedArticle> SavedArticles { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
@@ -97,16 +98,28 @@ namespace Data_Layer.Persistence
 
             #endregion
 
-            #region Saved Item
-            modelBuilder.Entity<SavedItem>()
+            #region Saved Snippet
+            modelBuilder.Entity<SavedSnippet>()
                 .HasOne(si => si.User)
-                .WithMany(i => i.SavedItems)
+                .WithMany(u => u.SavedSnippets)
                 .HasForeignKey(si => si.UserId);
 
-            modelBuilder.Entity<SavedItem>()
-                .HasOne(si => si.Item)
+            modelBuilder.Entity<SavedSnippet>()
+                .HasOne(ss => ss.Snippet)
                 .WithOne()
-                .HasForeignKey<SavedItem>(si => si.ItemId);
+                .HasForeignKey<SavedSnippet>(ss => ss.SnippetId);
+            #endregion
+
+            #region Saved Article
+            modelBuilder.Entity<SavedArticle>()
+                .HasOne(sa => sa.User)
+                .WithMany(u => u.SavedArticles)
+                .HasForeignKey(sa => sa.UserId);
+
+            modelBuilder.Entity<SavedArticle>()
+                .HasOne(sa => sa.Article)
+                .WithOne()
+                .HasForeignKey<SavedArticle>(sa => sa.ArticleId);
             #endregion
         }
     }
