@@ -14,5 +14,13 @@ namespace Business_Layer.Services
         {
             
         }
+
+        public void SaveArticle(Article article, User user)
+        {
+            if (user.SavedArticles.Contains(article))
+            {
+
+            }
+        }
     }
 }

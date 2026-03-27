@@ -99,27 +99,46 @@ namespace Data_Layer.Persistence
             #endregion
 
             #region Saved Snippet
-            modelBuilder.Entity<SavedSnippet>()
-                .HasOne(si => si.User)
-                .WithMany(u => u.SavedSnippets)
-                .HasForeignKey(si => si.UserId);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.SavedSnippets)
+                .WithMany(s => s.UsersSavingSnippet)
+                .UsingEntity<SavedSnippet>(
+                    ss => ss
+                        .HasOne(ss => ss.Snippet)
+                        .WithMany()
+                        .HasForeignKey(ss => ss.SnippetId)
+                        .OnDelete(DeleteBehavior.Cascade),
 
-            modelBuilder.Entity<SavedSnippet>()
-                .HasOne(ss => ss.Snippet)
-                .WithOne()
-                .HasForeignKey<SavedSnippet>(ss => ss.SnippetId);
+                    ss => ss
+                        .HasOne(ss => ss.User)
+                        .WithMany()
+                        .HasForeignKey(ss => ss.UserId)
+                        .OnDelete(DeleteBehavior.Cascade),
+
+                    ss => ss.HasKey(t => new { t.UserId, t.SnippetId })
+             );
+
             #endregion
 
             #region Saved Article
-            modelBuilder.Entity<SavedArticle>()
-                .HasOne(sa => sa.User)
-                .WithMany(u => u.SavedArticles)
-                .HasForeignKey(sa => sa.UserId);
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.SavedArticles)
+                .WithMany(s => s.UsersSavingArticle)
+                .UsingEntity<SavedArticle>(
+                    sa => sa
+                        .HasOne(sa => sa.Article)
+                        .WithMany()
+                        .HasForeignKey(sa => sa.ArticleId)
+                        .OnDelete(DeleteBehavior.Cascade),
 
-            modelBuilder.Entity<SavedArticle>()
-                .HasOne(sa => sa.Article)
-                .WithOne()
-                .HasForeignKey<SavedArticle>(sa => sa.ArticleId);
+                    sa => sa
+                        .HasOne(sa => sa.User)
+                        .WithMany()
+                        .HasForeignKey(sa => sa.UserId)
+                        .OnDelete(DeleteBehavior.Cascade),
+
+                    sa => sa.HasKey(t => new { t.UserId, t.ArticleId })
+                );
             #endregion
         }
     }

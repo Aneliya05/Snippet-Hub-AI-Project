@@ -17,5 +17,7 @@ namespace Data_Layer.Entities
         public virtual Category Category { get; set; }
         public virtual Language Language { get; set; }
         public virtual List<Tag> Tags { get; set; } = new List<Tag>();
+
+        public virtual List<User> UsersSavingArticle { get; set; } = new List<User>();
     }
 }
