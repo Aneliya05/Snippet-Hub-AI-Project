@@ -1,0 +1,34 @@
+﻿using Data_Layer.Entities;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace API.Services
+{
+    public class TokenServices
+    {
+        public string CreateToken(User user)
+        {
+            Claim[] claims = new Claim[]
+            {
+                new Claim("loggedUserId", user.Id.ToString())
+            };
+
+
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("!Password123!Password123!Password123"));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            JwtSecurityToken token = new JwtSecurityToken(
+                issuer: "Snippet Hub",
+                audience: "SnippetHubAPIClient",
+                claims: claims,
+                expires: DateTime.Now.AddMinutes(10),
+                signingCredentials: credentials
+            );
+
+            string tokenData = new JwtSecurityTokenHandler().WriteToken(token);
+            return tokenData;
+        }
+    }
+}

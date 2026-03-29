@@ -1,0 +1,184 @@
+﻿using API.Services;
+using Business_Layer.Services;
+using Business_Layer;
+using Data_Layer.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
+using System.Reflection;
+using API.Infrastructure.RequestDTOs.Shared;
+using API.Infrastructure.ResponseDTOs.Shared;
+
+namespace API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BaseCRUDController<E, EService, ERequest, EGetRequest, EGetResponse> : ControllerBase
+        where E : BaseEntity, new()
+        where EService : BaseServices<E>, new()
+        where ERequest : class, new()
+        where EGetRequest : BaseGetRequest, new()
+        where EGetResponse : BaseGetResponse<E>, new()
+    {
+        protected virtual void PopulateEntity(E item, ERequest model)
+        {
+
+        }
+
+        protected virtual Expression<Func<E, bool>> GetFilter(EGetRequest model)
+        {
+            return null;
+        }
+
+        protected virtual Expression<Func<E, bool>> GetPersonalFilter(EGetRequest model)
+        {
+            return null;
+        }
+        protected virtual void PopulateGetResponse(EGetRequest request, EGetResponse response)
+        {
+
+        }
+
+        [HttpGet("getAll")]
+        public virtual IActionResult Get([FromQuery] EGetRequest model)
+        {
+            model.Pager = model.Pager ?? new PagerRequest();
+            model.Pager.Page = model.Pager.Page <= 0
+                                    ? 1
+                                    : model.Pager.Page;
+            model.Pager.PageSize = model.Pager.PageSize <= 0
+                                        ? 10
+                                        : model.Pager.PageSize;
+            model.OrderBy ??= nameof(BaseEntity.Id);
+            model.OrderBy = typeof(E).GetProperty(model.OrderBy) != null
+                                ? model.OrderBy
+                                : nameof(BaseEntity.Id);
+
+            EService service = new EService();
+
+            Expression<Func<E, bool>> filter = GetFilter(model);
+
+            var response = new EGetResponse();
+
+            response.Pager = new PagerResponse();
+            response.Pager.Page = model.Pager.Page;
+            response.Pager.PageSize = model.Pager.PageSize;
+            response.OrderBy = model.OrderBy;
+            response.SortAscending = model.SortAscending;
+
+            PopulateGetResponse(model, response);
+
+            response.Pager.Count = service.Count(filter);
+            response.Items = service.GetAll(
+                filter,
+                model.OrderBy,
+                model.SortAscending,
+                model.Pager.Page,
+                model.Pager.PageSize
+            );
+
+            return Ok(ServiceResult<EGetResponse>.Success(response));
+        }
+
+        [HttpGet("getById")]
+        [Route("{id}")]
+        public IActionResult Get([FromRoute] int id)
+        {
+            EService service = new EService();
+            try
+            {
+                var item = service.GetById(id);
+                if (item == null)
+                    throw new Exception($"{typeof(E).Name} not found");
+                return Ok(ServiceResult<E>.Success(item));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Global", ex.Message);
+                return BadRequest(
+                    ServiceResultExtension<List<Error>>.Failure(null, ModelState)
+                );
+            }
+        }
+
+        [Authorize]
+        [HttpPost]
+        public virtual IActionResult Post([FromBody] ERequest model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(
+                    ServiceResultExtension<List<Error>>.Failure(null, ModelState)
+                );
+
+            EService service = new EService();
+            E item = new E();
+            PopulateEntity(item, model);
+
+            service.Save(item);
+            return Ok(ServiceResult<E>.Success(item));
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Put([FromRoute] int id, [FromBody] ERequest model)
+        {
+            if (!ModelState.IsValid)
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(
+                        ServiceResultExtension<List<Error>>.Failure(null, ModelState)
+                    );
+
+            }
+            EService service = new EService();
+            try
+            {
+                E forUpdate = service.GetById(id);
+                if (forUpdate == null)
+                    throw new Exception($"{typeof(E).Name} not found");
+
+                PopulateEntity(forUpdate, model);
+                service.Save(forUpdate);
+                return Ok(ServiceResult<E>.Success(forUpdate));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Global", ex.Message);
+                return BadRequest(
+                    ServiceResultExtension<List<Error>>.Failure(null, ModelState)
+                );
+            }
+
+
+        }
+
+        [Authorize]
+        [HttpDelete]
+        [Route("{id}")]
+
+        public IActionResult Delete([FromRoute] int id)
+        {
+            EService service = new EService();
+            try
+            {
+                E forDelete = service.GetById(id);
+                if (forDelete == null)
+                    throw new Exception($"{typeof(E).Name} not found");
+
+                service.Delete(forDelete);
+
+                return Ok(ServiceResult<E>.Success(forDelete));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("Global", ex.Message);
+                return BadRequest(
+                    ServiceResultExtension<List<Error>>.Failure(null, ModelState)
+                );
+            }
+
+        }
+    }
+}
