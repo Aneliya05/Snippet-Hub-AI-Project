@@ -46,7 +46,7 @@ namespace Business_Layer.Services
         {
             var foundTag = GetTagByName(tag);
 
-            if (tag is null)
+            if (foundTag is null)
                 throw new Exception("Tag is not found!");
 
             Context.Attach(foundTag);
@@ -92,7 +92,7 @@ namespace Business_Layer.Services
         {
             var foundTag = GetTagByName(tag);
 
-            if (tag is null)
+            if (foundTag is null)
                 throw new Exception("Tag is not found!");
 
             Context.Attach(foundTag);
