@@ -2,6 +2,6 @@
 {
     public class SnippetGetRequest
     {
-        public SnippetGetFilterRequest SnippetGetFilterRequest { get; set; }
+        public SnippetGetFilterRequest FilterRequest { get; set; }
     }
 }

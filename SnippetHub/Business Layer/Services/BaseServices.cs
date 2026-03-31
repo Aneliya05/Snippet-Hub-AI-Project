@@ -1,4 +1,5 @@
 ﻿using Data_Layer.Entities;
+using Data_Layer.Entities.Categories;
 using Data_Layer.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,7 +14,7 @@ namespace Business_Layer.Services
 {
     public class BaseServices<T> where T : BaseEntity
     {
-        protected DbContext Context { get; set; }
+        protected AppDbContext Context { get; set; }
         protected DbSet<T> Items { get; set; }
 
         public BaseServices(AppDbContext context) 

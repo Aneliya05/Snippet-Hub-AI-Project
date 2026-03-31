@@ -21,10 +21,10 @@ namespace Data_Layer.Persistence
 
         public DbSet<SavedSnippet> SavedSnippets { get; set; }
         public DbSet<SavedArticle> SavedArticles { get; set; }
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
+        //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        //{
 
-        }
+        //}
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
