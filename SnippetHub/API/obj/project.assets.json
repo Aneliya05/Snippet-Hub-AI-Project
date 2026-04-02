@@ -760,6 +760,16 @@
         "runtime": {
           "bin/placeholder/Data Layer.dll": {}
         }
+      },
+      "Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shared.dll": {}
+        }
       }
     }
   },
@@ -1951,6 +1961,11 @@
       "type": "project",
       "path": "../Data Layer/Data Layer.csproj",
       "msbuildProject": "../Data Layer/Data Layer.csproj"
+    },
+    "Shared/1.0.0": {
+      "type": "project",
+      "path": "../Shared/Shared.csproj",
+      "msbuildProject": "../Shared/Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1958,11 +1973,13 @@
       "Business Layer >= 1.0.0",
       "Data Layer >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.25",
+      "Shared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aneli\\.nuget\\packages\\": {}
+    "C:\\Users\\aneli\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -1973,8 +1990,12 @@
       "packagesPath": "C:\\Users\\aneli\\.nuget\\packages\\",
       "outputPath": "D:\\Aneliya\\Uni\\AI Integrations\\Snippet-Hub-AI-Project\\SnippetHub\\API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\aneli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1982,6 +2003,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1993,6 +2015,9 @@
             },
             "D:\\Aneliya\\Uni\\AI Integrations\\Snippet-Hub-AI-Project\\SnippetHub\\Data Layer\\Data Layer.csproj": {
               "projectPath": "D:\\Aneliya\\Uni\\AI Integrations\\Snippet-Hub-AI-Project\\SnippetHub\\Data Layer\\Data Layer.csproj"
+            },
+            "D:\\Aneliya\\Uni\\AI Integrations\\Snippet-Hub-AI-Project\\SnippetHub\\Shared\\Shared.csproj": {
+              "projectPath": "D:\\Aneliya\\Uni\\AI Integrations\\Snippet-Hub-AI-Project\\SnippetHub\\Shared\\Shared.csproj"
             }
           }
         }

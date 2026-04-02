@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
 using System.Reflection;
-using API.Infrastructure.RequestDTOs.Shared;
-using API.Infrastructure.ResponseDTOs.Shared;
+using Shared.DTOs.ResponseDTOs.Shared;
+using Shared.DTOs.RequestDTOs.Shared;
+using Shared.Responses_Handling;
 
 namespace API.Controllers
 {
@@ -16,11 +17,17 @@ namespace API.Controllers
     [ApiController]
     public class BaseCRUDController<E, EService, ERequest, EGetRequest, EGetResponse> : ControllerBase
         where E : BaseEntity, new()
-        where EService : BaseServices<E>, new()
+        where EService : BaseServices<E>
         where ERequest : class, new()
         where EGetRequest : BaseGetRequest, new()
         where EGetResponse : BaseGetResponse<E>, new()
     {
+        protected readonly EService _service;
+
+        public BaseCRUDController(EService service)
+        {
+            _service = service;
+        }
         protected virtual void PopulateEntity(E item, ERequest model)
         {
 
@@ -55,7 +62,7 @@ namespace API.Controllers
                                 ? model.OrderBy
                                 : nameof(BaseEntity.Id);
 
-            EService service = new EService();
+            //EService service = new EService();
 
             Expression<Func<E, bool>> filter = GetFilter(model);
 
@@ -69,8 +76,8 @@ namespace API.Controllers
 
             PopulateGetResponse(model, response);
 
-            response.Pager.Count = service.Count(filter);
-            response.Items = service.GetAll(
+            response.Pager.Count = _service.Count(filter);
+            response.Items = _service.GetAll(
                 filter,
                 model.OrderBy,
                 model.SortAscending,
@@ -85,10 +92,10 @@ namespace API.Controllers
         [Route("{id}")]
         public IActionResult Get([FromRoute] int id)
         {
-            EService service = new EService();
+            //EService service = new EService();
             try
             {
-                var item = service.GetById(id);
+                var item = _service.GetById(id);
                 if (item == null)
                     throw new Exception($"{typeof(E).Name} not found");
                 return Ok(ServiceResult<E>.Success(item));
@@ -111,11 +118,11 @@ namespace API.Controllers
                     ServiceResultExtension<List<Error>>.Failure(null, ModelState)
                 );
 
-            EService service = new EService();
+            //EService service = new EService();
             E item = new E();
             PopulateEntity(item, model);
 
-            service.Save(item);
+            _service.Save(item);
             return Ok(ServiceResult<E>.Success(item));
         }
 
@@ -126,21 +133,19 @@ namespace API.Controllers
         {
             if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
-                    return BadRequest(
+                return BadRequest(
                         ServiceResultExtension<List<Error>>.Failure(null, ModelState)
                     );
-
             }
-            EService service = new EService();
+            //EService service = new EService();
             try
             {
-                E forUpdate = service.GetById(id);
+                E forUpdate = _service.GetById(id);
                 if (forUpdate == null)
                     throw new Exception($"{typeof(E).Name} not found");
 
                 PopulateEntity(forUpdate, model);
-                service.Save(forUpdate);
+                _service.Save(forUpdate);
                 return Ok(ServiceResult<E>.Success(forUpdate));
             }
             catch (Exception ex)
@@ -160,14 +165,14 @@ namespace API.Controllers
 
         public IActionResult Delete([FromRoute] int id)
         {
-            EService service = new EService();
+            //EService service = new EService();
             try
             {
-                E forDelete = service.GetById(id);
+                E forDelete = _service.GetById(id);
                 if (forDelete == null)
                     throw new Exception($"{typeof(E).Name} not found");
 
-                service.Delete(forDelete);
+                _service.Delete(forDelete);
 
                 return Ok(ServiceResult<E>.Success(forDelete));
             }
