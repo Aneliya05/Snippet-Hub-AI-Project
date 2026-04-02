@@ -2,11 +2,223 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile.Views.LoginPage"
-             Title="LoginPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title=""
+             BackgroundColor="#0D0F14">
+
+    <Grid RowDefinitions="*, Auto, *">
+
+        <!-- Background decorative shapes -->
+        <!--<AbsoluteLayout Grid.RowSpan="3">
+            --><!-- Top-right glow orb --><!--
+            <Ellipse
+                AbsoluteLayout.LayoutBounds="0.85, -0.05, 320, 320"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Fill="#1A2A6C"
+                Opacity="0.45"/>
+            --><!-- Bottom-left glow orb --><!--
+            <Ellipse
+                AbsoluteLayout.LayoutBounds="-0.05, 1.05, 280, 280"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Fill="#0E6E5A"
+                Opacity="0.30"/>
+            --><!-- Subtle center accent line --><!--
+            <BoxView
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                AbsoluteLayout.LayoutFlags="All"
+                Color="#FFFFFF"
+                Opacity="0.015"/>
+        </AbsoluteLayout>-->
+
+        <!-- Top spacer -->
+        <BoxView Grid.Row="0" Color="Transparent"/>
+
+        <!-- Main Card -->
+        <Border Grid.Row="1"
+                Margin="28,0"
+                Padding="32,36"
+                BackgroundColor="#13161E"
+                StrokeThickness="1"
+                Stroke="#2A2E3D"
+                StrokeShape="RoundRectangle 24">
+
+            <!-- Subtle inner shadow overlay -->
+            <Border.Shadow>
+                <Shadow Brush="#000000" Offset="0,12" Radius="48" Opacity="0.6"/>
+            </Border.Shadow>
+
+            <VerticalStackLayout Spacing="0">
+
+                <!-- Logo / Icon area -->
+                <Border HorizontalOptions="Center"
+                        Padding="16"
+                        BackgroundColor="#1E2330"
+                        StrokeThickness="1"
+                        Stroke="#2E3448"
+                        StrokeShape="RoundRectangle 16"
+                        Margin="0,0,0,28">
+                    <Label Text="✦"
+                           FontSize="28"
+                           TextColor="#4FCCB0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+
+                <!-- Title -->
+                <Label Text="Welcome"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="#F0F2F8"
+                       HorizontalOptions="Center"
+                       CharacterSpacing="-0.3"
+                       Margin="0,0,0,6"/>
+
+                <!-- Subtitle -->
+                <Label Text="Sign in to continue"
+                       FontSize="14"
+                       TextColor="#6B7280"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,36"/>
+
+                <!-- Username Field Label -->
+                <Label Text="USERNAME"
+                       FontSize="11"
+                       FontAttributes="Bold"
+                       TextColor="#4FCCB0"
+                       CharacterSpacing="1.5"
+                       Margin="0,0,0,8"/>
+
+                <!-- Username Entry -->
+                <Border Padding="0"
+                        BackgroundColor="#1A1E2A"
+                        StrokeThickness="1"
+                        Stroke="#2A2E3D"
+                        StrokeShape="RoundRectangle 12"
+                        Margin="0,0,0,20">
+                    <Grid ColumnDefinitions="Auto, *" Padding="14,0">
+                        <Label Grid.Column="0"
+                               Text="󰀄"
+                               FontFamily="MaterialIcons"
+                               FontSize="18"
+                               TextColor="#4A5060"
+                               VerticalOptions="Center"
+                               Margin="0,0,10,0"/>
+                        <!-- Fallback if icon font unavailable -->
+                        <Label Grid.Column="0"
+                               Text="@"
+                               FontSize="16"
+                               TextColor="#4A5060"
+                               VerticalOptions="Center"
+                               Margin="0,0,10,0"/>
+                        <Entry Grid.Column="1"
+                               x:Name="UsernameEntry"
+                               Placeholder="Enter your username"
+                               Text="{Binding Username}"
+                               PlaceholderColor="#3A3F50"
+                               TextColor="#E8EAF0"
+                               BackgroundColor="Transparent"
+                               FontSize="15"
+                               HeightRequest="52"
+                               ReturnType="Next"
+                               Keyboard="Email"/>
+                    </Grid>
+                </Border>
+
+                <!-- Password Field Label -->
+                <Label Text="PASSWORD"
+                       FontSize="11"
+                       FontAttributes="Bold"
+                       TextColor="#4FCCB0"
+                       CharacterSpacing="1.5"
+                       Margin="0,0,0,8"/>
+
+                <!-- Password Entry -->
+                <Border Padding="0"
+                        BackgroundColor="#1A1E2A"
+                        StrokeThickness="1"
+                        Stroke="#2A2E3D"
+                        StrokeShape="RoundRectangle 12"
+                        Margin="0,0,0,12">
+                    <Grid ColumnDefinitions="Auto, *, Auto" Padding="14,0">
+                        <Label Grid.Column="0"
+                               Text="🔒"
+                               FontSize="15"
+                               TextColor="#4A5060"
+                               VerticalOptions="Center"
+                               Margin="0,0,10,0"/>
+                        <Entry Grid.Column="1"
+                               x:Name="PasswordEntry"
+                               Placeholder="Enter your password"
+                               Text="{Binding Password}"
+                               PlaceholderColor="#3A3F50"
+                               TextColor="#E8EAF0"
+                               BackgroundColor="Transparent"
+                               FontSize="15"
+                               HeightRequest="52"
+                               IsPassword="True"
+                               ReturnType="Done"/>
+                    </Grid>
+                </Border>
+
+                <!-- Forgot Password -->
+                <Label Text="Forgot password?"
+                       FontSize="13"
+                       TextColor="#4FCCB0"
+                       HorizontalOptions="End"
+                       Margin="0,0,0,32">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!-- Sign In Button -->
+                <Border BackgroundColor="#4FCCB0"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 12"
+                        Margin="0,0,0,20">
+                    <Border.Shadow>
+                        <Shadow Brush="#4FCCB0" Offset="0,4" Radius="20" Opacity="0.35"/>
+                    </Border.Shadow>
+                    <Button x:Name="LoginButton"
+                            Text="SIGN IN"
+                            Command="{Binding LoginCommand}"
+                            TextColor="#0D0F14"
+                            FontAttributes="Bold"
+                            FontSize="14"
+                            CharacterSpacing="1.8"
+                            BackgroundColor="Transparent"
+                            HeightRequest="52"
+                            CornerRadius="12"/>
+                </Border>
+                
+
+                <!-- Divider -->
+                <Grid ColumnDefinitions="*, Auto, *" Margin="0,0,0,20">
+                    <BoxView Grid.Column="0" Color="#2A2E3D" HeightRequest="1" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="or" TextColor="#3A3F50" FontSize="13" Margin="12,0"/>
+                    <BoxView Grid.Column="2" Color="#2A2E3D" HeightRequest="1" VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- Register Link -->
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
+                    <Label Text="Don't have an account?"
+                           TextColor="#6B7280"
+                           FontSize="14"/>
+                    <Label Text="Register"
+                           TextColor="#4FCCB0"
+                           FontSize="14"
+                           FontAttributes="Bold">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Bottom spacer -->
+        <BoxView Grid.Row="2" Color="Transparent"/>
+
+    </Grid>
+
 </ContentPage>

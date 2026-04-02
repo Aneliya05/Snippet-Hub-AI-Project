@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-04-02T13:07:00.029</Modified>
+      <Modified>2026-04-02T21:00:38.250</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-04-02T13:06:59.746</Modified>
+      <Modified>2026-04-02T20:44:07.874</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.runtimeconfig.json">
       <PackagePath>Mobile.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.dll">
       <PackagePath>Mobile.dll</PackagePath>
-      <Modified>2026-04-02T13:06:58.096</Modified>
+      <Modified>2026-04-02T21:00:37.676</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Mobile.exe</PackagePath>
-      <Modified>2026-04-02T13:06:58.174</Modified>
+      <Modified>2026-04-02T21:00:37.679</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -287,7 +287,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.deps.json">
       <PackagePath>Mobile.deps.json</PackagePath>
-      <Modified>2026-04-02T13:06:59.227</Modified>
+      <Modified>2026-04-02T20:19:56.161</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aneli\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

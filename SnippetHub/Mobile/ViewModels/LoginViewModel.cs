@@ -38,7 +38,6 @@ namespace Mobile.ViewModels
 
                 _apiClient.SetToken(token);
 
-                // Navigate to Home
                 Application.Current.MainPage = new NavigationPage(new HomePage());
             }
             catch (Exception ex)
