@@ -12,4 +12,8 @@ public partial class LoginPage : ContentPage
         BindingContext = viewModel;
     }
 
+    //private void OnTestClicked(object sender, EventArgs e)
+    //{
+    //    DisplayAlert("Test", "Clicked!", "OK");
+    //}
 }

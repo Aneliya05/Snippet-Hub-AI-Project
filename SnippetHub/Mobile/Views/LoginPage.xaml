@@ -30,7 +30,7 @@
         </AbsoluteLayout>-->
 
         <!-- Top spacer -->
-        <BoxView Grid.Row="0" Color="Transparent"/>
+        <!--<BoxView Grid.Row="0" Color="Transparent"/>-->
 
         <!-- Main Card -->
         <Border Grid.Row="1"
