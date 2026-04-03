@@ -4,7 +4,7 @@ using Shared.DTOs.Snippet;
 
 namespace Shared.DTOs.ResponseDTOs.Snippet
 {
-    public class SnippetGetResponse : BaseGetResponse<SnippetGetRequest>
+    public class SnippetGetResponse : BaseGetResponse<SnippetResponseDto>
     {
         public SnippetGetFilterRequest Filter { get; set; }
     }

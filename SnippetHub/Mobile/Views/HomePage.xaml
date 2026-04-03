@@ -2,10 +2,697 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobile.Views.HomePage"
-             Title="HomePage">
-    <VerticalStackLayout>
-        <Label Text="Welcome!" 
-           HorizontalOptions="Center" 
-           VerticalOptions="Center" />
-    </VerticalStackLayout>
+             Title=""
+             BackgroundColor="#0D0F14">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, *">
+
+        <!-- ── Background orbs ── -->
+        <AbsoluteLayout Grid.RowSpan="4" InputTransparent="True">
+            <Ellipse AbsoluteLayout.LayoutBounds="1.08, -0.02, 300, 300"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     Fill="#1A2A6C" Opacity="0.35"/>
+            <Ellipse AbsoluteLayout.LayoutBounds="-0.08, 0.6, 200, 200"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     Fill="#0E6E5A" Opacity="0.22"/>
+        </AbsoluteLayout>
+
+        <!-- ── Top header ── -->
+        <Grid Grid.Row="0"
+              ColumnDefinitions="*, Auto"
+              Padding="24,52,24,16">
+
+            <VerticalStackLayout Grid.Column="0" Spacing="2" VerticalOptions="Center">
+                <Label Text="Good morning,"
+                       FontSize="13"
+                       TextColor="#6B7280"/>
+                <Label Text="John Doe 👋"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#F0F2F8"
+                       CharacterSpacing="-0.3"/>
+            </VerticalStackLayout>
+
+            <!-- Avatar -->
+            <Border Grid.Column="1"
+                    WidthRequest="44"
+                    HeightRequest="44"
+                    BackgroundColor="#1E2330"
+                    StrokeThickness="2"
+                    Stroke="#4FCCB0"
+                    StrokeShape="RoundRectangle 22"
+                    VerticalOptions="Center">
+                <Label Text="JD"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       TextColor="#4FCCB0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Border>
+        </Grid>
+
+        <!-- ── Search + Filter bar ── -->
+        <VerticalStackLayout Grid.Row="1" Spacing="10" Padding="24,0,24,0">
+
+            <!-- Search box -->
+            <Border Padding="0"
+                    BackgroundColor="#13161E"
+                    StrokeThickness="1"
+                    Stroke="#2A2E3D"
+                    StrokeShape="RoundRectangle 14">
+                <Grid ColumnDefinitions="Auto, *, Auto" Padding="14,0">
+                    <Label Grid.Column="0"
+                           Text="⌕"
+                           FontSize="20"
+                           TextColor="#4A5060"
+                           VerticalOptions="Center"
+                           Margin="0,0,10,0"/>
+                    <Entry Grid.Column="1"
+                           x:Name="SearchEntry"
+                           Placeholder="Search snippets &amp; articles..."
+                           PlaceholderColor="#3A3F50"
+                           TextColor="#E8EAF0"
+                           BackgroundColor="Transparent"
+                           FontSize="14"
+                           HeightRequest="48"
+                           ReturnType="Search"
+                           Keyboard="Text"/>
+                    <!-- Filter icon button -->
+                    <Border Grid.Column="2"
+                            BackgroundColor="#1A1E2A"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 8"
+                            Padding="8,6"
+                            VerticalOptions="Center">
+                        <Label Text="⊟"
+                               FontSize="16"
+                               TextColor="#4FCCB0"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="FilterTap"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Filter chips -->
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                <HorizontalStackLayout Spacing="8">
+
+                    <Border x:Name="ChipAll"
+                            BackgroundColor="#1E2A28"
+                            StrokeThickness="1"
+                            Stroke="#4FCCB0"
+                            StrokeShape="RoundRectangle 20"
+                            Padding="14,7">
+                        <Label Text="All"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                               TextColor="#4FCCB0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChipAllTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <Border x:Name="ChipCSharp"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Padding="14,7">
+                        <Label Text="C#"
+                               FontSize="12"
+                               TextColor="#6B7280">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChipTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <Border x:Name="ChipMaui"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Padding="14,7">
+                        <Label Text=".NET MAUI"
+                               FontSize="12"
+                               TextColor="#6B7280">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChipTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <Border x:Name="ChipJS"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Padding="14,7">
+                        <Label Text="JavaScript"
+                               FontSize="12"
+                               TextColor="#6B7280">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChipTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <Border x:Name="ChipPython"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Padding="14,7">
+                        <Label Text="Python"
+                               FontSize="12"
+                               TextColor="#6B7280">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChipTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <Border x:Name="ChipArchitecture"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Padding="14,7">
+                        <Label Text="Architecture"
+                               FontSize="12"
+                               TextColor="#6B7280">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnChipTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                </HorizontalStackLayout>
+            </ScrollView>
+
+        </VerticalStackLayout>
+
+        <!-- ── Tab bar ── -->
+        <Grid Grid.Row="2"
+              Margin="24,14,24,0">
+            <Border StrokeThickness="1"
+                    Stroke="#2A2E3D"
+                    StrokeShape="RoundRectangle 14"
+                    BackgroundColor="#13161E"
+                    Padding="4">
+                <Grid ColumnDefinitions="*, *">
+
+                    <Border x:Name="SnippetsTabBorder"
+                            Grid.Column="0"
+                            BackgroundColor="#1E2A28"
+                            StrokeThickness="1"
+                            Stroke="#4FCCB0"
+                            StrokeShape="RoundRectangle 10">
+                        <Label x:Name="SnippetsTabLabel"
+                               Text="⌨  Snippets"
+                               FontSize="13"
+                               FontAttributes="Bold"
+                               TextColor="#4FCCB0"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="38">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSnippetsTabTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <Border x:Name="ArticlesTabBorder"
+                            Grid.Column="1"
+                            BackgroundColor="Transparent"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 10">
+                        <Label x:Name="ArticlesTabLabel"
+                               Text="✦  Articles"
+                               FontSize="13"
+                               TextColor="#6B7280"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="38">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnArticlesTabTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- ── Feed content ── -->
+        <ScrollView Grid.Row="3" Padding="0,14,0,0">
+            <VerticalStackLayout Spacing="0">
+
+                <!-- ════════════ SNIPPETS TAB ════════════ -->
+                <VerticalStackLayout x:Name="SnippetsTab"
+                                     IsVisible="True"
+                                     Spacing="0"
+                                     Padding="24,0,24,32">
+
+                    <!-- Snippet Card 1 -->
+                    <Border Padding="0"
+                            BackgroundColor="#13161E"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Margin="0,0,0,14">
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="0">
+
+                            <!-- Card top accent bar (language color) -->
+                            <BoxView HeightRequest="3"
+                                     Color="#4FCCB0"
+                                     CornerRadius="20,20,0,0"/>
+
+                            <VerticalStackLayout Padding="20,16,20,18" Spacing="0">
+
+                                <!-- Tags row -->
+                                <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
+                                    <Border BackgroundColor="#0E2420"
+                                            StrokeThickness="1"
+                                            Stroke="#1A4A40"
+                                            StrokeShape="RoundRectangle 6"
+                                            Padding="8,4">
+                                        <Label Text="C#"
+                                               FontSize="11"
+                                               FontAttributes="Bold"
+                                               TextColor="#4FCCB0"/>
+                                    </Border>
+                                    <Border BackgroundColor="#131A2A"
+                                            StrokeThickness="1"
+                                            Stroke="#1E2A40"
+                                            StrokeShape="RoundRectangle 6"
+                                            Padding="8,4">
+                                        <Label Text=".NET MAUI"
+                                               FontSize="11"
+                                               TextColor="#7A9CC0"/>
+                                    </Border>
+                                    <Border BackgroundColor="#1A1520"
+                                            StrokeThickness="1"
+                                            Stroke="#2E2040"
+                                            StrokeShape="RoundRectangle 6"
+                                            Padding="8,4">
+                                        <Label Text="Navigation"
+                                               FontSize="11"
+                                               TextColor="#9A80C0"/>
+                                    </Border>
+                                </HorizontalStackLayout>
+
+                                <!-- Title -->
+                                <Label Text="Shell Navigation with Query Parameters"
+                                       FontSize="16"
+                                       FontAttributes="Bold"
+                                       TextColor="#F0F2F8"
+                                       LineBreakMode="WordWrap"
+                                       Margin="0,0,0,8"/>
+
+                                <!-- Description -->
+                                <Label Text="Pass data between pages using Shell URI-based routing and QueryProperty attributes."
+                                       FontSize="13"
+                                       TextColor="#8A8FA0"
+                                       LineBreakMode="WordWrap"
+                                       Margin="0,0,0,14"/>
+
+                                <!-- Code preview -->
+                                <Border Padding="14,12"
+                                        BackgroundColor="#0A0C10"
+                                        StrokeThickness="1"
+                                        Stroke="#1E2230"
+                                        StrokeShape="RoundRectangle 10"
+                                        Margin="0,0,0,16">
+                                    <Label FontFamily="Courier New"
+                                           FontSize="12"
+                                           TextColor="#C8D0E0"
+                                           LineBreakMode="WordWrap">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="await" TextColor="#C084FC"/>
+                                                <Span Text=" Shell.Current.GoToAsync(" TextColor="#C8D0E0"/>
+                                                <Span Text="$&quot;details?id=" TextColor="#86EFAC"/>
+                                                <Span Text="{item.Id}" TextColor="#FCD34D"/> 
+                                                <Span Text="&quot;" TextColor="#86EFAC"/>
+                                                <Span Text=");" TextColor="#C8D0E0"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </Border>
+
+                                <!-- Footer: date + stats -->
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <Label Grid.Column="0"
+                                           Text="Mar 28, 2025"
+                                           FontSize="12"
+                                           TextColor="#4A5060"
+                                           VerticalOptions="Center"/>
+                                    <HorizontalStackLayout Grid.Column="1" Spacing="14">
+                                        <HorizontalStackLayout Spacing="4">
+                                            <Label Text="♥" FontSize="14" TextColor="#4FCCB0"/>
+                                            <Label Text="42" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="4">
+                                            <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
+                                            <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                        </HorizontalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Grid>
+
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Snippet Card 2 -->
+                    <Border Padding="0"
+                            BackgroundColor="#13161E"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Margin="0,0,0,14">
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="0">
+                            <BoxView HeightRequest="3" Color="#F5A623" CornerRadius="20,20,0,0"/>
+                            <VerticalStackLayout Padding="20,16,20,18" Spacing="0">
+
+                                <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
+                                    <Border BackgroundColor="#1F1600" StrokeThickness="1" Stroke="#3D2C00" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                        <Label Text="JavaScript" FontSize="11" FontAttributes="Bold" TextColor="#F5A623"/>
+                                    </Border>
+                                    <Border BackgroundColor="#1A1520" StrokeThickness="1" Stroke="#2E2040" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                        <Label Text="Async" FontSize="11" TextColor="#9A80C0"/>
+                                    </Border>
+                                </HorizontalStackLayout>
+
+                                <Label Text="Parallel API calls with Promise.all()"
+                                       FontSize="16" FontAttributes="Bold"
+                                       TextColor="#F0F2F8"
+                                       LineBreakMode="WordWrap"
+                                       Margin="0,0,0,8"/>
+                                <Label Text="Fire multiple fetch requests simultaneously and await all results in one go."
+                                       FontSize="13" TextColor="#8A8FA0"
+                                       LineBreakMode="WordWrap"
+                                       Margin="0,0,0,14"/>
+
+                                <Border Padding="14,12" BackgroundColor="#0A0C10"
+                                        StrokeThickness="1" Stroke="#1E2230"
+                                        StrokeShape="RoundRectangle 10"
+                                        Margin="0,0,0,16">
+                                    <Label FontFamily="Courier New" FontSize="12" TextColor="#C8D0E0" LineBreakMode="WordWrap">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="const" TextColor="#C084FC"/>
+                                                <Span Text=" [a, b] = " TextColor="#C8D0E0"/>
+                                                <Span Text="await" TextColor="#C084FC"/>
+                                                <Span Text=" Promise." TextColor="#C8D0E0"/>
+                                                <Span Text="all" TextColor="#86EFAC"/>
+                                                <Span Text="([f1(), f2()]);" TextColor="#C8D0E0"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </Border>
+
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <Label Grid.Column="0" Text="Apr 01, 2025" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                    <HorizontalStackLayout Grid.Column="1" Spacing="14">
+                                        <HorizontalStackLayout Spacing="4">
+                                            <Label Text="♥" FontSize="14" TextColor="#F5A623"/>
+                                            <Label Text="87" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="4">
+                                            <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
+                                            <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                        </HorizontalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Grid>
+
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Snippet Card 3 -->
+                    <Border Padding="0"
+                            BackgroundColor="#13161E"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Margin="0,0,0,14">
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="0">
+                            <BoxView HeightRequest="3" Color="#6C84F5" CornerRadius="20,20,0,0"/>
+                            <VerticalStackLayout Padding="20,16,20,18" Spacing="0">
+
+                                <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
+                                    <Border BackgroundColor="#0D1230" StrokeThickness="1" Stroke="#1A2050" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                        <Label Text="Python" FontSize="11" FontAttributes="Bold" TextColor="#6C84F5"/>
+                                    </Border>
+                                    <Border BackgroundColor="#1A1520" StrokeThickness="1" Stroke="#2E2040" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                        <Label Text="Data" FontSize="11" TextColor="#9A80C0"/>
+                                    </Border>
+                                </HorizontalStackLayout>
+
+                                <Label Text="List comprehension with conditional filter"
+                                       FontSize="16" FontAttributes="Bold"
+                                       TextColor="#F0F2F8"
+                                       LineBreakMode="WordWrap"
+                                       Margin="0,0,0,8"/>
+                                <Label Text="Concise one-liner to filter and transform lists using Python's comprehension syntax."
+                                       FontSize="13" TextColor="#8A8FA0"
+                                       LineBreakMode="WordWrap"
+                                       Margin="0,0,0,14"/>
+
+                                <Border Padding="14,12" BackgroundColor="#0A0C10"
+                                        StrokeThickness="1" Stroke="#1E2230"
+                                        StrokeShape="RoundRectangle 10"
+                                        Margin="0,0,0,16">
+                                    <Label FontFamily="Courier New" FontSize="12" TextColor="#C8D0E0" LineBreakMode="WordWrap">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="evens = [" TextColor="#C8D0E0"/>
+                                                <Span Text="x" TextColor="#86EFAC"/>
+                                                <Span Text=" for " TextColor="#C084FC"/>
+                                                <Span Text="x" TextColor="#86EFAC"/>
+                                                <Span Text=" in " TextColor="#C084FC"/>
+                                                <Span Text="nums" TextColor="#FCD34D"/>
+                                                <Span Text=" if " TextColor="#C084FC"/>
+                                                <Span Text="x % 2 == 0]" TextColor="#C8D0E0"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </Border>
+
+                                <Grid ColumnDefinitions="*, Auto">
+                                    <Label Grid.Column="0" Text="Mar 15, 2025" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                    <HorizontalStackLayout Grid.Column="1" Spacing="14">
+                                        <HorizontalStackLayout Spacing="4">
+                                            <Label Text="♥" FontSize="14" TextColor="#6C84F5"/>
+                                            <Label Text="61" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="4">
+                                            <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
+                                            <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                        </HorizontalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Grid>
+
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+
+                <!-- ════════════ ARTICLES TAB ════════════ -->
+                <VerticalStackLayout x:Name="ArticlesTab"
+                                     IsVisible="False"
+                                     Spacing="0"
+                                     Padding="24,0,24,32">
+
+                    <!-- Article Card 1 -->
+                    <Border Padding="20,18"
+                            BackgroundColor="#13161E"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Margin="0,0,0,14">
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="0">
+
+                            <!-- Category badge row -->
+                            <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
+                                <Border BackgroundColor="#0E2420" StrokeThickness="1" Stroke="#1A4A40" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                    <Label Text="Architecture" FontSize="11" FontAttributes="Bold" TextColor="#4FCCB0"/>
+                                </Border>
+                                <Border BackgroundColor="#131A2A" StrokeThickness="1" Stroke="#1E2A40" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                    <Label Text=".NET MAUI" FontSize="11" TextColor="#7A9CC0"/>
+                                </Border>
+                            </HorizontalStackLayout>
+
+                            <Label Text="MVVM in .NET MAUI: A Practical Guide"
+                                   FontSize="17" FontAttributes="Bold"
+                                   TextColor="#F0F2F8"
+                                   LineBreakMode="WordWrap"
+                                   Margin="0,0,0,8"/>
+
+                            <Label Text="A deep dive into implementing the Model-View-ViewModel pattern in MAUI apps using CommunityToolkit.Mvvm, covering commands, observables, and dependency injection best practices."
+                                   FontSize="13" TextColor="#8A8FA0"
+                                   LineBreakMode="WordWrap"
+                                   Margin="0,0,0,16"/>
+
+                            <!-- Read time + date row -->
+                            <Grid ColumnDefinitions="*, Auto" Margin="0,0,0,0">
+                                <HorizontalStackLayout Grid.Column="0" Spacing="12">
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="◷" FontSize="13" TextColor="#4A5060" VerticalOptions="Center"/>
+                                        <Label Text="8 min read" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <Label Text="Apr 02, 2025" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Grid.Column="1" Spacing="14">
+                                    <HorizontalStackLayout Spacing="4">
+                                        <Label Text="♥" FontSize="14" TextColor="#4FCCB0"/>
+                                        <Label Text="134" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="4">
+                                        <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
+                                        <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                </HorizontalStackLayout>
+                            </Grid>
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Article Card 2 -->
+                    <Border Padding="20,18"
+                            BackgroundColor="#13161E"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Margin="0,0,0,14">
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="0">
+
+                            <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
+                                <Border BackgroundColor="#1F1600" StrokeThickness="1" Stroke="#3D2C00" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                    <Label Text="Performance" FontSize="11" FontAttributes="Bold" TextColor="#F5A623"/>
+                                </Border>
+                                <Border BackgroundColor="#1A1520" StrokeThickness="1" Stroke="#2E2040" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                    <Label Text="C#" FontSize="11" TextColor="#9A80C0"/>
+                                </Border>
+                            </HorizontalStackLayout>
+
+                            <Label Text="Optimising startup time in .NET MAUI apps"
+                                   FontSize="17" FontAttributes="Bold"
+                                   TextColor="#F0F2F8"
+                                   LineBreakMode="WordWrap"
+                                   Margin="0,0,0,8"/>
+
+                            <Label Text="Startup performance matters. This article covers AOT compilation, trimming, lazy loading services, and cold start profiling to get your app launching under 600ms."
+                                   FontSize="13" TextColor="#8A8FA0"
+                                   LineBreakMode="WordWrap"
+                                   Margin="0,0,0,16"/>
+
+                            <Grid ColumnDefinitions="*, Auto">
+                                <HorizontalStackLayout Grid.Column="0" Spacing="12">
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="◷" FontSize="13" TextColor="#4A5060" VerticalOptions="Center"/>
+                                        <Label Text="12 min read" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <Label Text="Mar 22, 2025" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Grid.Column="1" Spacing="14">
+                                    <HorizontalStackLayout Spacing="4">
+                                        <Label Text="♥" FontSize="14" TextColor="#F5A623"/>
+                                        <Label Text="209" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="4">
+                                        <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
+                                        <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                </HorizontalStackLayout>
+                            </Grid>
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Article Card 3 -->
+                    <Border Padding="20,18"
+                            BackgroundColor="#13161E"
+                            StrokeThickness="1"
+                            Stroke="#2A2E3D"
+                            StrokeShape="RoundRectangle 20"
+                            Margin="0,0,0,14">
+                        <Border.Shadow>
+                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
+                        </Border.Shadow>
+                        <VerticalStackLayout Spacing="0">
+
+                            <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
+                                <Border BackgroundColor="#0D1230" StrokeThickness="1" Stroke="#1A2050" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                    <Label Text="Security" FontSize="11" FontAttributes="Bold" TextColor="#6C84F5"/>
+                                </Border>
+                                <Border BackgroundColor="#1A1520" StrokeThickness="1" Stroke="#2E2040" StrokeShape="RoundRectangle 6" Padding="8,4">
+                                    <Label Text="Auth" FontSize="11" TextColor="#9A80C0"/>
+                                </Border>
+                            </HorizontalStackLayout>
+
+                            <Label Text="JWT authentication in .NET MAUI with refresh tokens"
+                                   FontSize="17" FontAttributes="Bold"
+                                   TextColor="#F0F2F8"
+                                   LineBreakMode="WordWrap"
+                                   Margin="0,0,0,8"/>
+
+                            <Label Text="End-to-end guide to storing tokens securely with SecureStorage, handling expiry, silently refreshing sessions, and integrating with ASP.NET Core identity."
+                                   FontSize="13" TextColor="#8A8FA0"
+                                   LineBreakMode="WordWrap"
+                                   Margin="0,0,0,16"/>
+
+                            <Grid ColumnDefinitions="*, Auto">
+                                <HorizontalStackLayout Grid.Column="0" Spacing="12">
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="◷" FontSize="13" TextColor="#4A5060" VerticalOptions="Center"/>
+                                        <Label Text="15 min read" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <Label Text="Mar 10, 2025" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout Grid.Column="1" Spacing="14">
+                                    <HorizontalStackLayout Spacing="4">
+                                        <Label Text="♥" FontSize="14" TextColor="#6C84F5"/>
+                                        <Label Text="176" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Spacing="4">
+                                        <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
+                                        <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                </HorizontalStackLayout>
+                            </Grid>
+
+                        </VerticalStackLayout>
+                    </Border>
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
 </ContentPage>

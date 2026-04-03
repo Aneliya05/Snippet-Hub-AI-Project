@@ -21,10 +21,10 @@ namespace Data_Layer.Persistence
 
         public DbSet<SavedSnippet> SavedSnippets { get; set; }
         public DbSet<SavedArticle> SavedArticles { get; set; }
-        //public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        //{
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
 
-        //}
+        }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
@@ -92,9 +92,9 @@ namespace Data_Layer.Persistence
                 .HasForeignKey(s => s.AuthorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Snippet>()
+            modelBuilder.Entity<Article>()
                 .HasMany(s => s.Tags)
-                .WithMany(t => t.Snippets);
+                .WithMany(t => t.Articles);
 
             #endregion
 

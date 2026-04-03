@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mobile.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel 
     {
         private readonly UserService _userService;
         private readonly TokenStorage _tokenStorage;

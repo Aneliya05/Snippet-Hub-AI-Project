@@ -23,6 +23,7 @@ namespace Mobile
 #endif
             builder.Services.AddSingleton<ApiClient>();
             builder.Services.AddSingleton<UserService>();
+            builder.Services.AddSingleton<SnippetService>();
             builder.Services.AddSingleton<TokenStorage>();
 
             builder.Services.AddTransient<LoginViewModel>();

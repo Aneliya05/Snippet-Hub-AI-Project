@@ -1,8 +1,8 @@
 ﻿namespace Shared.DTOs.ResponseDTOs.Shared
 {
-    public class BaseGetResponse<E>
+    public class BaseGetResponse<EDto>
     {
-        public List<E> Items { get; set; }
+        public List<EDto> Items { get; set; }
         public PagerResponse Pager { get; set; }
         public string OrderBy { get; set; }
         public bool SortAscending { get; set; }

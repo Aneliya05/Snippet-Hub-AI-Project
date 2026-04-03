@@ -9,8 +9,6 @@ namespace Mobile
         {
             InitializeComponent();
 
-            MainPage = new ContentPage();
-
             InitializeApp(apiClient, tokenStorage, loginPage);
         }
 

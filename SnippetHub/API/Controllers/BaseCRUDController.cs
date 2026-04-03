@@ -15,40 +15,45 @@ namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseCRUDController<E, EService, ERequest, EGetRequest, EGetResponse> : ControllerBase
-        where E : BaseEntity, new()
-        where EService : BaseServices<E>
-        where ERequest : class, new()
-        where EGetRequest : BaseGetRequest, new()
-        where EGetResponse : BaseGetResponse<E>, new()
+    public class BaseCRUDController<TEntity, TService, TRequest, TGetRequest, TResponse> : ControllerBase
+        where TEntity : BaseEntity, new()
+        where TService : BaseServices<TEntity>
+        where TRequest : class, new()
+        where TGetRequest : BaseGetRequest, new()
+        where TResponse : class, new()
     {
-        protected readonly EService _service;
+        protected readonly TService _service;
 
-        public BaseCRUDController(EService service)
+        public BaseCRUDController(TService service)
         {
             _service = service;
         }
-        protected virtual void PopulateEntity(E item, ERequest model)
+        protected virtual void PopulateEntity(TEntity item, TRequest model)
         {
 
         }
 
-        protected virtual Expression<Func<E, bool>> GetFilter(EGetRequest model)
+        protected virtual Expression<Func<TEntity, bool>> GetFilter(TGetRequest model)
         {
             return null;
         }
 
-        protected virtual Expression<Func<E, bool>> GetPersonalFilter(EGetRequest model)
+        protected virtual Expression<Func<TEntity, bool>> GetPersonalFilter(TGetRequest model)
         {
             return null;
         }
-        protected virtual void PopulateGetResponse(EGetRequest request, EGetResponse response)
+        protected virtual void PopulateGetResponse(TGetRequest request, BaseGetResponse<TResponse> response)
         {
 
+        }
+
+        protected virtual TResponse MapToResponse(TEntity entity)
+        {
+            throw new NotImplementedException("You must override MapToResponse in the derived controller.");
         }
 
         [HttpGet("getAll")]
-        public virtual IActionResult Get([FromQuery] EGetRequest model)
+        public virtual IActionResult Get([FromQuery] TGetRequest model)
         {
             model.Pager = model.Pager ?? new PagerRequest();
             model.Pager.Page = model.Pager.Page <= 0
@@ -57,27 +62,32 @@ namespace API.Controllers
             model.Pager.PageSize = model.Pager.PageSize <= 0
                                         ? 10
                                         : model.Pager.PageSize;
+
             model.OrderBy ??= nameof(BaseEntity.Id);
-            model.OrderBy = typeof(E).GetProperty(model.OrderBy) != null
+            model.OrderBy = typeof(TEntity).GetProperty(model.OrderBy) != null
                                 ? model.OrderBy
                                 : nameof(BaseEntity.Id);
 
             //EService service = new EService();
 
-            Expression<Func<E, bool>> filter = GetFilter(model);
+            Expression<Func<TEntity, bool>> filter = GetFilter(model);
 
-            var response = new EGetResponse();
-
-            response.Pager = new PagerResponse();
-            response.Pager.Page = model.Pager.Page;
-            response.Pager.PageSize = model.Pager.PageSize;
-            response.OrderBy = model.OrderBy;
-            response.SortAscending = model.SortAscending;
+            var response = new BaseGetResponse<TResponse>
+            {
+                Pager = new PagerResponse
+                {
+                    Page = model.Pager.Page,
+                    PageSize = model.Pager.PageSize
+                },
+                OrderBy = model.OrderBy,
+                SortAscending = model.SortAscending
+            };
 
             PopulateGetResponse(model, response);
 
             response.Pager.Count = _service.Count(filter);
-            response.Items = _service.GetAll(
+
+            var entities = _service.GetAll(
                 filter,
                 model.OrderBy,
                 model.SortAscending,
@@ -85,7 +95,11 @@ namespace API.Controllers
                 model.Pager.PageSize
             );
 
-            return Ok(ServiceResult<EGetResponse>.Success(response));
+            response.Items = entities
+               .Select(MapToResponse)
+               .ToList();
+
+            return Ok(ServiceResult<BaseGetResponse<TResponse>>.Success(response));
         }
 
         [HttpGet("getById")]
@@ -96,9 +110,10 @@ namespace API.Controllers
             try
             {
                 var item = _service.GetById(id);
+
                 if (item == null)
-                    throw new Exception($"{typeof(E).Name} not found");
-                return Ok(ServiceResult<E>.Success(item));
+                    throw new Exception($"{typeof(TEntity).Name} not found");
+                return Ok(ServiceResult<TResponse>.Success(MapToResponse(item)));
             }
             catch (Exception ex)
             {
@@ -111,7 +126,7 @@ namespace API.Controllers
 
         [Authorize]
         [HttpPost]
-        public virtual IActionResult Post([FromBody] ERequest model)
+        public virtual IActionResult Post([FromBody] TRequest model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(
@@ -119,17 +134,18 @@ namespace API.Controllers
                 );
 
             //EService service = new EService();
-            E item = new E();
+            TEntity item = new TEntity();
+
             PopulateEntity(item, model);
 
             _service.Save(item);
-            return Ok(ServiceResult<E>.Success(item));
+            return Ok(ServiceResult<TResponse>.Success(MapToResponse(item)));
         }
 
         [Authorize]
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put([FromRoute] int id, [FromBody] ERequest model)
+        public IActionResult Put([FromRoute] int id, [FromBody] TRequest model)
         {
             if (!ModelState.IsValid)
             {
@@ -140,13 +156,15 @@ namespace API.Controllers
             //EService service = new EService();
             try
             {
-                E forUpdate = _service.GetById(id);
+                TEntity forUpdate = _service.GetById(id);
                 if (forUpdate == null)
-                    throw new Exception($"{typeof(E).Name} not found");
+                    throw new Exception($"{typeof(TEntity).Name} not found");
 
                 PopulateEntity(forUpdate, model);
+
                 _service.Save(forUpdate);
-                return Ok(ServiceResult<E>.Success(forUpdate));
+                
+                return Ok(ServiceResult<TResponse>.Success(MapToResponse(forUpdate)));
             }
             catch (Exception ex)
             {
@@ -155,8 +173,6 @@ namespace API.Controllers
                     ServiceResultExtension<List<Error>>.Failure(null, ModelState)
                 );
             }
-
-
         }
 
         [Authorize]
@@ -168,13 +184,14 @@ namespace API.Controllers
             //EService service = new EService();
             try
             {
-                E forDelete = _service.GetById(id);
+                TEntity forDelete = _service.GetById(id);
+                
                 if (forDelete == null)
-                    throw new Exception($"{typeof(E).Name} not found");
+                    throw new Exception($"{typeof(TEntity).Name} not found");
 
                 _service.Delete(forDelete);
 
-                return Ok(ServiceResult<E>.Success(forDelete));
+                return Ok(ServiceResult<TResponse>.Success(MapToResponse(forDelete)));
             }
             catch (Exception ex)
             {
