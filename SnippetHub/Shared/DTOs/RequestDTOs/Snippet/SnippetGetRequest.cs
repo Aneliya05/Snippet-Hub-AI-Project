@@ -6,6 +6,6 @@ namespace Shared.DTOs.RequestDTOs.Snippet
     public class SnippetGetRequest : BaseGetRequest
     {
 
-        public SnippetGetFilterRequest FilterRequest { get; set; }
+        public SnippetGetFilterRequest Filter { get; set; }
     }
 }

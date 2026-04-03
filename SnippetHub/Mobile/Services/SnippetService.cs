@@ -1,5 +1,6 @@
 ﻿using Shared.DTOs.RequestDTOs.Snippet;
 using Shared.DTOs.RequestDTOs.User;
+using Shared.DTOs.ResponseDTOs.Snippet;
 using Shared.DTOs.ResponseDTOs.User;
 using System;
 using System.Collections.Generic;
@@ -11,20 +12,24 @@ namespace Mobile.Services
 {
     public class SnippetService
     {
-        public async Task<List<SnippetGetRequest>> Login(string username, string password)
+        private readonly ApiClient _apiClient;
+        public SnippetService(ApiClient api)
         {
-            var result = await _apiClient.PostAsync<SnippetRequest>(
-                "users/createToken",
-                new UserLoginRequest
-                {
-                    Username = username,
-                    Password = password
-                });
+            _apiClient = api;
+        }
 
-            if (!result.IsSuccess)
-                throw new Exception("Login failed");
+        public async Task<List<SnippetResponseDto>> GetSnippets(string? category = null)
+        {
+            string endpoint = "api/snippets";
 
-            return result.Data.Token;
+            if(!string.IsNullOrEmpty(category))
+            {
+                endpoint += $"?category={category}"; // Uri.EscapeDataString(category) - good to be used; 
+            }
+
+            var result = await _apiClient.GetAsync<List<SnippetResponseDto>>(endpoint);
+
+            return result?.Data ?? new List<SnippetResponseDto>();
         }
     }
 }

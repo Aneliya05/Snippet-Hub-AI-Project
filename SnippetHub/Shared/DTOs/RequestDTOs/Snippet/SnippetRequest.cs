@@ -6,5 +6,7 @@
         public string Description { get; set; }
         public string Content { get; set; }
         public DateOnly DatePublished { get; set; }
+        
+
     }
 }

@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-04-03T12:24:04.694</Modified>
+      <Modified>2026-04-03T16:44:46.191</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-04-03T12:24:03.319</Modified>
+      <Modified>2026-04-03T16:16:13.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.runtimeconfig.json">
       <PackagePath>Mobile.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.dll">
       <PackagePath>Mobile.dll</PackagePath>
-      <Modified>2026-04-03T12:24:02.755</Modified>
+      <Modified>2026-04-03T16:44:45.140</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Mobile.exe</PackagePath>
-      <Modified>2026-04-03T12:24:02.760</Modified>
+      <Modified>2026-04-03T16:44:45.199</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -571,7 +571,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Shared\bin\Debug\net8.0\Shared.dll">
       <PackagePath>Shared.dll</PackagePath>
-      <Modified>2026-04-02T13:05:55.553</Modified>
+      <Modified>2026-04-03T16:14:51.781</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aneli\.nuget\packages\microsoft.maui.controls.compatibility\8.0.3\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

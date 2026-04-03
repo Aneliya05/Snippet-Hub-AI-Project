@@ -88,7 +88,9 @@ namespace Mobile.Views
 
             _activeChip = selected;
 
-            // TODO: filter feed by selected chip label
+            var label = (selected.Content as Label)?.Text;
+
+            await _vm.LoadSnippets(label == "All" ? null : label);
         }
     }
 }

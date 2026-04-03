@@ -259,259 +259,51 @@
                                      IsVisible="True"
                                      Spacing="0"
                                      Padding="24,0,24,32">
+                    <CollectionView ItemsSource="{Binding Snippets}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
 
-                    <!-- Snippet Card 1 -->
-                    <Border Padding="0"
-                            BackgroundColor="#13161E"
-                            StrokeThickness="1"
-                            Stroke="#2A2E3D"
-                            StrokeShape="RoundRectangle 20"
-                            Margin="0,0,0,14">
-                        <Border.Shadow>
-                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
-                        </Border.Shadow>
-                        <VerticalStackLayout Spacing="0">
+                                <Border Padding="0"
+                                    BackgroundColor="#13161E"
+                                    StrokeThickness="1"
+                                    Stroke="#2A2E3D"
+                                    StrokeShape="RoundRectangle 20"
+                                    Margin="0,0,0,14">
 
-                            <!-- Card top accent bar (language color) -->
-                            <BoxView HeightRequest="3"
-                                     Color="#4FCCB0"
-                                     CornerRadius="20,20,0,0"/>
+                                    <VerticalStackLayout>
 
-                            <VerticalStackLayout Padding="20,16,20,18" Spacing="0">
+                                        <BoxView HeightRequest="3"
+                                            Color="#4FCCB0"/>
 
-                                <!-- Tags row -->
-                                <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
-                                    <Border BackgroundColor="#0E2420"
-                                            StrokeThickness="1"
-                                            Stroke="#1A4A40"
-                                            StrokeShape="RoundRectangle 6"
-                                            Padding="8,4">
-                                        <Label Text="C#"
-                                               FontSize="11"
+                                        <VerticalStackLayout Padding="20,16">
+
+                                            <!-- Title -->
+                                            <Label Text="{Binding Title}"
+                                               FontSize="16"
                                                FontAttributes="Bold"
-                                               TextColor="#4FCCB0"/>
-                                    </Border>
-                                    <Border BackgroundColor="#131A2A"
-                                            StrokeThickness="1"
-                                            Stroke="#1E2A40"
-                                            StrokeShape="RoundRectangle 6"
-                                            Padding="8,4">
-                                        <Label Text=".NET MAUI"
-                                               FontSize="11"
-                                               TextColor="#7A9CC0"/>
-                                    </Border>
-                                    <Border BackgroundColor="#1A1520"
-                                            StrokeThickness="1"
-                                            Stroke="#2E2040"
-                                            StrokeShape="RoundRectangle 6"
-                                            Padding="8,4">
-                                        <Label Text="Navigation"
-                                               FontSize="11"
-                                               TextColor="#9A80C0"/>
-                                    </Border>
-                                </HorizontalStackLayout>
+                                               TextColor="#F0F2F8"/>            
 
-                                <!-- Title -->
-                                <Label Text="Shell Navigation with Query Parameters"
-                                       FontSize="16"
-                                       FontAttributes="Bold"
-                                       TextColor="#F0F2F8"
-                                       LineBreakMode="WordWrap"
-                                       Margin="0,0,0,8"/>
+                                            <!-- Code preview -->
+                                            <Label Text="{Binding Code}"
+                                               FontFamily="Courier New"
+                                               FontSize="12"
+                                               TextColor="#C8D0E0"
+                                               LineBreakMode="TailTruncation"
+                                               MaxLines="3"/>
 
-                                <!-- Description -->
-                                <Label Text="Pass data between pages using Shell URI-based routing and QueryProperty attributes."
-                                       FontSize="13"
-                                       TextColor="#8A8FA0"
-                                       LineBreakMode="WordWrap"
-                                       Margin="0,0,0,14"/>
+                                            <!-- Category -->
+                                            <Label Text="{Binding Category.Name}"
+                                               FontSize="12"
+                                               TextColor="#4FCCB0"/>            
 
-                                <!-- Code preview -->
-                                <Border Padding="14,12"
-                                        BackgroundColor="#0A0C10"
-                                        StrokeThickness="1"
-                                        Stroke="#1E2230"
-                                        StrokeShape="RoundRectangle 10"
-                                        Margin="0,0,0,16">
-                                    <Label FontFamily="Courier New"
-                                           FontSize="12"
-                                           TextColor="#C8D0E0"
-                                           LineBreakMode="WordWrap">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="await" TextColor="#C084FC"/>
-                                                <Span Text=" Shell.Current.GoToAsync(" TextColor="#C8D0E0"/>
-                                                <Span Text="$&quot;details?id=" TextColor="#86EFAC"/>
-                                                <Span Text="{item.Id}" TextColor="#FCD34D"/> 
-                                                <Span Text="&quot;" TextColor="#86EFAC"/>
-                                                <Span Text=");" TextColor="#C8D0E0"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                        </VerticalStackLayout>
+
+                                    </VerticalStackLayout>
                                 </Border>
 
-                                <!-- Footer: date + stats -->
-                                <Grid ColumnDefinitions="*, Auto">
-                                    <Label Grid.Column="0"
-                                           Text="Mar 28, 2025"
-                                           FontSize="12"
-                                           TextColor="#4A5060"
-                                           VerticalOptions="Center"/>
-                                    <HorizontalStackLayout Grid.Column="1" Spacing="14">
-                                        <HorizontalStackLayout Spacing="4">
-                                            <Label Text="♥" FontSize="14" TextColor="#4FCCB0"/>
-                                            <Label Text="42" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
-                                        </HorizontalStackLayout>
-                                        <HorizontalStackLayout Spacing="4">
-                                            <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
-                                            <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
-                                        </HorizontalStackLayout>
-                                    </HorizontalStackLayout>
-                                </Grid>
-
-                            </VerticalStackLayout>
-                        </VerticalStackLayout>
-                    </Border>
-
-                    <!-- Snippet Card 2 -->
-                    <Border Padding="0"
-                            BackgroundColor="#13161E"
-                            StrokeThickness="1"
-                            Stroke="#2A2E3D"
-                            StrokeShape="RoundRectangle 20"
-                            Margin="0,0,0,14">
-                        <Border.Shadow>
-                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
-                        </Border.Shadow>
-                        <VerticalStackLayout Spacing="0">
-                            <BoxView HeightRequest="3" Color="#F5A623" CornerRadius="20,20,0,0"/>
-                            <VerticalStackLayout Padding="20,16,20,18" Spacing="0">
-
-                                <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
-                                    <Border BackgroundColor="#1F1600" StrokeThickness="1" Stroke="#3D2C00" StrokeShape="RoundRectangle 6" Padding="8,4">
-                                        <Label Text="JavaScript" FontSize="11" FontAttributes="Bold" TextColor="#F5A623"/>
-                                    </Border>
-                                    <Border BackgroundColor="#1A1520" StrokeThickness="1" Stroke="#2E2040" StrokeShape="RoundRectangle 6" Padding="8,4">
-                                        <Label Text="Async" FontSize="11" TextColor="#9A80C0"/>
-                                    </Border>
-                                </HorizontalStackLayout>
-
-                                <Label Text="Parallel API calls with Promise.all()"
-                                       FontSize="16" FontAttributes="Bold"
-                                       TextColor="#F0F2F8"
-                                       LineBreakMode="WordWrap"
-                                       Margin="0,0,0,8"/>
-                                <Label Text="Fire multiple fetch requests simultaneously and await all results in one go."
-                                       FontSize="13" TextColor="#8A8FA0"
-                                       LineBreakMode="WordWrap"
-                                       Margin="0,0,0,14"/>
-
-                                <Border Padding="14,12" BackgroundColor="#0A0C10"
-                                        StrokeThickness="1" Stroke="#1E2230"
-                                        StrokeShape="RoundRectangle 10"
-                                        Margin="0,0,0,16">
-                                    <Label FontFamily="Courier New" FontSize="12" TextColor="#C8D0E0" LineBreakMode="WordWrap">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="const" TextColor="#C084FC"/>
-                                                <Span Text=" [a, b] = " TextColor="#C8D0E0"/>
-                                                <Span Text="await" TextColor="#C084FC"/>
-                                                <Span Text=" Promise." TextColor="#C8D0E0"/>
-                                                <Span Text="all" TextColor="#86EFAC"/>
-                                                <Span Text="([f1(), f2()]);" TextColor="#C8D0E0"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                </Border>
-
-                                <Grid ColumnDefinitions="*, Auto">
-                                    <Label Grid.Column="0" Text="Apr 01, 2025" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
-                                    <HorizontalStackLayout Grid.Column="1" Spacing="14">
-                                        <HorizontalStackLayout Spacing="4">
-                                            <Label Text="♥" FontSize="14" TextColor="#F5A623"/>
-                                            <Label Text="87" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
-                                        </HorizontalStackLayout>
-                                        <HorizontalStackLayout Spacing="4">
-                                            <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
-                                            <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
-                                        </HorizontalStackLayout>
-                                    </HorizontalStackLayout>
-                                </Grid>
-
-                            </VerticalStackLayout>
-                        </VerticalStackLayout>
-                    </Border>
-
-                    <!-- Snippet Card 3 -->
-                    <Border Padding="0"
-                            BackgroundColor="#13161E"
-                            StrokeThickness="1"
-                            Stroke="#2A2E3D"
-                            StrokeShape="RoundRectangle 20"
-                            Margin="0,0,0,14">
-                        <Border.Shadow>
-                            <Shadow Brush="#000000" Offset="0,6" Radius="24" Opacity="0.45"/>
-                        </Border.Shadow>
-                        <VerticalStackLayout Spacing="0">
-                            <BoxView HeightRequest="3" Color="#6C84F5" CornerRadius="20,20,0,0"/>
-                            <VerticalStackLayout Padding="20,16,20,18" Spacing="0">
-
-                                <HorizontalStackLayout Spacing="6" Margin="0,0,0,12">
-                                    <Border BackgroundColor="#0D1230" StrokeThickness="1" Stroke="#1A2050" StrokeShape="RoundRectangle 6" Padding="8,4">
-                                        <Label Text="Python" FontSize="11" FontAttributes="Bold" TextColor="#6C84F5"/>
-                                    </Border>
-                                    <Border BackgroundColor="#1A1520" StrokeThickness="1" Stroke="#2E2040" StrokeShape="RoundRectangle 6" Padding="8,4">
-                                        <Label Text="Data" FontSize="11" TextColor="#9A80C0"/>
-                                    </Border>
-                                </HorizontalStackLayout>
-
-                                <Label Text="List comprehension with conditional filter"
-                                       FontSize="16" FontAttributes="Bold"
-                                       TextColor="#F0F2F8"
-                                       LineBreakMode="WordWrap"
-                                       Margin="0,0,0,8"/>
-                                <Label Text="Concise one-liner to filter and transform lists using Python's comprehension syntax."
-                                       FontSize="13" TextColor="#8A8FA0"
-                                       LineBreakMode="WordWrap"
-                                       Margin="0,0,0,14"/>
-
-                                <Border Padding="14,12" BackgroundColor="#0A0C10"
-                                        StrokeThickness="1" Stroke="#1E2230"
-                                        StrokeShape="RoundRectangle 10"
-                                        Margin="0,0,0,16">
-                                    <Label FontFamily="Courier New" FontSize="12" TextColor="#C8D0E0" LineBreakMode="WordWrap">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="evens = [" TextColor="#C8D0E0"/>
-                                                <Span Text="x" TextColor="#86EFAC"/>
-                                                <Span Text=" for " TextColor="#C084FC"/>
-                                                <Span Text="x" TextColor="#86EFAC"/>
-                                                <Span Text=" in " TextColor="#C084FC"/>
-                                                <Span Text="nums" TextColor="#FCD34D"/>
-                                                <Span Text=" if " TextColor="#C084FC"/>
-                                                <Span Text="x % 2 == 0]" TextColor="#C8D0E0"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                </Border>
-
-                                <Grid ColumnDefinitions="*, Auto">
-                                    <Label Grid.Column="0" Text="Mar 15, 2025" FontSize="12" TextColor="#4A5060" VerticalOptions="Center"/>
-                                    <HorizontalStackLayout Grid.Column="1" Spacing="14">
-                                        <HorizontalStackLayout Spacing="4">
-                                            <Label Text="♥" FontSize="14" TextColor="#6C84F5"/>
-                                            <Label Text="61" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
-                                        </HorizontalStackLayout>
-                                        <HorizontalStackLayout Spacing="4">
-                                            <Label Text="⊹" FontSize="14" TextColor="#6B7280"/>
-                                            <Label Text="Save" FontSize="12" TextColor="#6B7280" VerticalOptions="Center"/>
-                                        </HorizontalStackLayout>
-                                    </HorizontalStackLayout>
-                                </Grid>
-
-                            </VerticalStackLayout>
-                        </VerticalStackLayout>
-                    </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
 
                 </VerticalStackLayout>
 

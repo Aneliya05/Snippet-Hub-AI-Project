@@ -27,6 +27,7 @@ namespace Mobile
             builder.Services.AddSingleton<TokenStorage>();
 
             builder.Services.AddTransient<LoginViewModel>();
+            builder.Services.AddTransient<HomeViewModel>();
 
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<HomePage>();

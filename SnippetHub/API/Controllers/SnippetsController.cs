@@ -27,8 +27,8 @@ namespace API.Controllers
         }
         protected override Expression<Func<Snippet, bool>> GetFilter(SnippetGetRequest model)
         {
-           
-            return null;
+            return s =>
+                (string.IsNullOrEmpty(model.Filter.Category) || s.Category.Name == model.Filter.Category);
         }
 
         protected override SnippetResponseDto MapToResponse(Snippet s)
