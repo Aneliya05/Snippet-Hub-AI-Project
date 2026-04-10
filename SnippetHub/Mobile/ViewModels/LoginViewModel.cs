@@ -38,7 +38,8 @@ namespace Mobile.ViewModels
 
                 _apiClient.SetToken(token);
 
-                Application.Current.MainPage = new NavigationPage(new HomePage());
+                HomeViewModel homeViewModel = new HomeViewModel(new SnippetService(_apiClient));
+                Application.Current.MainPage = new NavigationPage(new HomePage(homeViewModel));
             }
             catch (Exception ex)
             {

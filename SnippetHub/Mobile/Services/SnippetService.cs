@@ -20,7 +20,7 @@ namespace Mobile.Services
 
         public async Task<List<SnippetResponseDto>> GetSnippets(string? category = null)
         {
-            string endpoint = "api/snippets";
+            string endpoint = "api/snippets/getAll";
 
             if(!string.IsNullOrEmpty(category))
             {

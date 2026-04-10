@@ -5,14 +5,14 @@ namespace Mobile
 {
     public partial class App : Application
     {
-        public App(ApiClient apiClient, TokenStorage tokenStorage, LoginPage loginPage)
+        public App(ApiClient apiClient, TokenStorage tokenStorage, LoginPage loginPage, HomePage homePage)
         {
             InitializeComponent();
 
-            InitializeApp(apiClient, tokenStorage, loginPage);
+            InitializeApp(apiClient, tokenStorage, loginPage, homePage);
         }
 
-        private async void InitializeApp(ApiClient apiClient, TokenStorage tokenStorage, LoginPage loginPage)
+        private async void InitializeApp(ApiClient apiClient, TokenStorage tokenStorage, LoginPage loginPage, HomePage homePage)
         {
             var token = await tokenStorage.GetTokenAsync();
                 
@@ -20,7 +20,7 @@ namespace Mobile
             {
                 apiClient.SetToken(token);
 
-                MainPage = new NavigationPage(new HomePage());
+                MainPage = new NavigationPage(homePage);
             }
             else
             {

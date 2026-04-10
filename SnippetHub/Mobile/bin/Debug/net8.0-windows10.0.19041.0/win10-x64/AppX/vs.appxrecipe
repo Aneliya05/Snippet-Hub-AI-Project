@@ -29,25 +29,25 @@
     <AppXManifest Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-04-03T16:44:46.191</Modified>
+      <Modified>2026-04-10T19:51:45.539</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-04-03T16:16:13.471</Modified>
+      <Modified>2026-04-10T19:16:38.569</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.runtimeconfig.json">
       <PackagePath>Mobile.runtimeconfig.json</PackagePath>
-      <Modified>2026-04-02T13:06:59.369</Modified>
+      <Modified>2026-04-10T19:16:38.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.dll">
       <PackagePath>Mobile.dll</PackagePath>
-      <Modified>2026-04-03T16:44:45.140</Modified>
+      <Modified>2026-04-10T19:51:40.811</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Mobile.exe</PackagePath>
-      <Modified>2026-04-03T16:44:45.199</Modified>
+      <Modified>2026-04-10T19:51:40.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -55,23 +55,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:19.523</Modified>
+      <Modified>2026-04-10T19:16:34.456</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:19.538</Modified>
+      <Modified>2026-04-10T19:16:34.482</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:19.586</Modified>
+      <Modified>2026-04-10T19:16:34.548</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:19.632</Modified>
+      <Modified>2026-04-10T19:16:34.596</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:19.884</Modified>
+      <Modified>2026-04-10T19:16:34.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -83,211 +83,211 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2026-04-02T07:17:19.978</Modified>
+      <Modified>2026-04-10T19:16:35.003</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.873</Modified>
+      <Modified>2026-04-10T19:16:35.848</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.905</Modified>
+      <Modified>2026-04-10T19:16:35.885</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.936</Modified>
+      <Modified>2026-04-10T19:16:35.958</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.999</Modified>
+      <Modified>2026-04-10T19:16:36.043</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:21.187</Modified>
+      <Modified>2026-04-10T19:16:36.419</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.245</Modified>
+      <Modified>2026-04-10T19:16:35.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.261</Modified>
+      <Modified>2026-04-10T19:16:35.311</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.292</Modified>
+      <Modified>2026-04-10T19:16:35.350</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.261</Modified>
+      <Modified>2026-04-10T19:16:35.319</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.279</Modified>
+      <Modified>2026-04-10T19:16:35.330</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.182</Modified>
+      <Modified>2026-04-10T19:16:35.230</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.182</Modified>
+      <Modified>2026-04-10T19:16:35.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.245</Modified>
+      <Modified>2026-04-10T19:16:35.290</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.198</Modified>
+      <Modified>2026-04-10T19:16:35.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.220</Modified>
+      <Modified>2026-04-10T19:16:35.269</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.025</Modified>
+      <Modified>2026-04-10T19:16:35.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.041</Modified>
+      <Modified>2026-04-10T19:16:35.055</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.056</Modified>
+      <Modified>2026-04-10T19:16:35.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.078</Modified>
+      <Modified>2026-04-10T19:16:35.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.088</Modified>
+      <Modified>2026-04-10T19:16:35.117</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.104</Modified>
+      <Modified>2026-04-10T19:16:35.131</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.119</Modified>
+      <Modified>2026-04-10T19:16:35.144</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.166</Modified>
+      <Modified>2026-04-10T19:16:35.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.135</Modified>
+      <Modified>2026-04-10T19:16:35.161</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.135</Modified>
+      <Modified>2026-04-10T19:16:35.178</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.449</Modified>
+      <Modified>2026-04-10T19:16:35.501</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.464</Modified>
+      <Modified>2026-04-10T19:16:35.523</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.480</Modified>
+      <Modified>2026-04-10T19:16:35.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.512</Modified>
+      <Modified>2026-04-10T19:16:35.572</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.579</Modified>
+      <Modified>2026-04-10T19:16:35.619</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.379</Modified>
+      <Modified>2026-04-10T19:16:35.429</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.386</Modified>
+      <Modified>2026-04-10T19:16:35.439</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.402</Modified>
+      <Modified>2026-04-10T19:16:35.449</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.402</Modified>
+      <Modified>2026-04-10T19:16:35.463</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.433</Modified>
+      <Modified>2026-04-10T19:16:35.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.308</Modified>
+      <Modified>2026-04-10T19:16:35.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.323</Modified>
+      <Modified>2026-04-10T19:16:35.373</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.339</Modified>
+      <Modified>2026-04-10T19:16:35.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.339</Modified>
+      <Modified>2026-04-10T19:16:35.401</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.370</Modified>
+      <Modified>2026-04-10T19:16:35.417</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.591</Modified>
+      <Modified>2026-04-10T19:16:35.636</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.637</Modified>
+      <Modified>2026-04-10T19:16:35.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.685</Modified>
+      <Modified>2026-04-10T19:16:35.685</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.732</Modified>
+      <Modified>2026-04-10T19:16:35.711</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.842</Modified>
+      <Modified>2026-04-10T19:16:35.804</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2026-04-02T07:17:19.978</Modified>
+      <Modified>2026-04-10T19:16:34.975</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.009</Modified>
+      <Modified>2026-04-10T19:16:35.007</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.025</Modified>
+      <Modified>2026-04-10T19:16:35.047</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.078</Modified>
+      <Modified>2026-04-10T19:16:35.100</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2026-04-02T07:17:20.245</Modified>
+      <Modified>2026-04-10T19:16:35.309</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Mobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Mobile.deps.json">
       <PackagePath>Mobile.deps.json</PackagePath>
-      <Modified>2026-04-02T20:19:56.161</Modified>
+      <Modified>2026-04-10T19:16:38.182</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aneli\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -571,7 +571,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Aneliya\Uni\AI Integrations\Snippet-Hub-AI-Project\SnippetHub\Shared\bin\Debug\net8.0\Shared.dll">
       <PackagePath>Shared.dll</PackagePath>
-      <Modified>2026-04-03T16:14:51.781</Modified>
+      <Modified>2026-04-10T18:34:49.953</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aneli\.nuget\packages\microsoft.maui.controls.compatibility\8.0.3\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

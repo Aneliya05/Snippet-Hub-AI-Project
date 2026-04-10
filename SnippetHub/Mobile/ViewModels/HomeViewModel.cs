@@ -20,11 +20,14 @@ namespace Mobile.ViewModels
 
         public async Task LoadSnippets(string? category = null)
         {
-            var data = await _service.GetSnippets();
+            var data = await _service.GetSnippets(category);
+
+            if (data == null)
+                return;
 
             Snippets.Clear();
 
-            foreach(var item in data)
+            foreach (var item in data)
             {
                 Snippets.Add(item);
             }

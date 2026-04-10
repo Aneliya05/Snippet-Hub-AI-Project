@@ -1,4 +1,5 @@
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
+using Mobile.ViewModels;
 
 namespace Mobile.Views
 {
@@ -6,13 +7,25 @@ namespace Mobile.Views
     {
         private Border? _activeChip;
 
-        public HomePage()
+        public HomePage(HomeViewModel viewModel)
         {
             InitializeComponent();
             _activeChip = ChipAll;
+
+            BindingContext = viewModel;
         }
 
-        // ?? Tab switching ????????????????????????????????????????
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (BindingContext is HomeViewModel vm)
+            {
+                await vm.LoadSnippets();
+            }
+        }
+
+        // ── Tab switching ────────────────────────────────────────
 
         private void OnSnippetsTabTapped(object sender, EventArgs e)
         {
@@ -48,7 +61,7 @@ namespace Mobile.Views
             SnippetsTabLabel.FontAttributes = FontAttributes.None;
         }
 
-        // ?? Filter chips ?????????????????????????????????????????
+        // ── Filter chips ─────────────────────────────────────────
 
         private void OnChipAllTapped(object sender, EventArgs e) =>
             ActivateChip(ChipAll);
@@ -63,7 +76,7 @@ namespace Mobile.Views
             }
         }
 
-        private void ActivateChip(Border selected)
+        private async void ActivateChip(Border selected)
         {
             // Deactivate previous
             if (_activeChip != null)
@@ -88,9 +101,17 @@ namespace Mobile.Views
 
             _activeChip = selected;
 
-            var label = (selected.Content as Label)?.Text;
+            if (BindingContext is HomeViewModel vm)
+            {
+                string? category = null;
 
-            await _vm.LoadSnippets(label == "All" ? null : label);
+                if (selected.Content is Label lbl)
+                {
+                    category = lbl.Text == "All" ? null : lbl.Text;
+                }
+
+                await vm.LoadSnippets(category);
+            }
         }
     }
 }
